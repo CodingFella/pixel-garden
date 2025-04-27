@@ -6,17 +6,44 @@ body {
     align-items: center;
     height: 100vh;
 }
-/*
-canvas {
-    width: 100vmin;
-    height: calc(100vmin * 10 / 20); /* maintain aspect ratio: height = width * (10 / 20) * /
-    image-rendering: pixelated;
-}
-
-*/
 
 canvas {
     width: 100vmin;
     height: calc(100vmin * 10 / 20); /* maintain aspect ratio: height = width * (10 / 20) */
     image-rendering: pixelated;
+}
+
+.hotbar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: absolute;
+    bottom: 1rem;
+    image-rendering: pixelated;
+}
+
+.hotbar-slot {
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(30, 30, 30, 0.3);
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: center;
+    border: 3px solid gray;
+}
+
+.selected.hotbar-slot {
+    border-color: white;
+}
+
+.pointer {
+    background-image: url("public/cursor.png");
+}
+
+.watering-can {
+    background-image: url("public/watering-can.png");
+}
+
+.hoe {
+    background-image: url("public/hoe.png");
 }

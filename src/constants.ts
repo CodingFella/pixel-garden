@@ -1,6 +1,6 @@
 // constants.ts
 
-export const DEBUG = true;
+export const DEBUG = false;
 
 export const VOID = -1;
 export const DIRT = 0;
