@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    background: #3e8948;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/*
+canvas {
+    width: 100vmin;
+    height: calc(100vmin * 10 / 20); /* maintain aspect ratio: height = width * (10 / 20) * /
+    image-rendering: pixelated;
+}
+
+*/
+
+canvas {
+    width: 100vmin;
+    height: calc(100vmin * 10 / 20); /* maintain aspect ratio: height = width * (10 / 20) */
+    image-rendering: pixelated;
+}
