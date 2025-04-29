@@ -15,6 +15,8 @@ export interface Tile {
 export interface TileState {
     type: number;
     watered: boolean;
+    cropID: number;
+    growthStage: number;
 }
 
 

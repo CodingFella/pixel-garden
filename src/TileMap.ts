@@ -1,4 +1,5 @@
 // TileMap.ts
+// Handles the current farm's tile states
 
 import {
   MAP_WIDTH,
@@ -15,12 +16,14 @@ export class TileMap {
   constructor() {
     this.map = Array.from(
       { length: MAP_HEIGHT },
-      (_: any): { type: number; watered: boolean }[] =>
+      (_: any): TileState[] =>
         Array.from(
           { length: MAP_WIDTH },
-          (_: any): { type: number; watered: boolean } => ({
+          (_: any): TileState => ({
             type: GRASS,
             watered: false,
+            cropID: -1,
+            growthStage: 0
           }),
         ),
     );
@@ -34,12 +37,12 @@ export class TileMap {
 
   getTile(x: number, y: number): TileState {
     if (x < 0 || y < 0 || x >= MAP_WIDTH || y >= MAP_HEIGHT) {
-      return { type: VOID, watered: false };
+      return { type: VOID, watered: false, cropID: -1, growthStage: 0 };
     }
     return this.map[y][x];
   }
 
-  setTile(x: number, y: number, tile: TileState) {
+  setTile(x: number, y: number, tile: TileState): void {
     if (x < 0 || y < 0 || x >= MAP_WIDTH || y >= MAP_HEIGHT) {
       return;
     }

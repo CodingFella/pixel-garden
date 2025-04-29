@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    cursor: default;
 }
 
 canvas {
@@ -33,7 +34,8 @@ canvas {
 }
 
 .selected.hotbar-slot {
-    border-color: white;
+    border-color: lightgray;
+    outline: 5px solid lightgray;
 }
 
 .pointer {
@@ -46,4 +48,30 @@ canvas {
 
 .hoe {
     background-image: url("public/hoe.png");
+}
+
+.pickaxe {
+    background-image: url("public/pickaxe.png");
+}
+
+.wheat-seed {
+    background-image: url("public/wheat-seed.png");
+}
+
+.tomato-seed {
+    background-image: url("public/tomato-seed.png");
+}
+
+.skip-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 5rem;
+    height: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2rem;
+    cursor: pointer;
+    user-select: none;
 }

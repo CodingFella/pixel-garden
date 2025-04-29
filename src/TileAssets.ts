@@ -5,15 +5,17 @@ export class TileAssets {
     grassMiddle: HTMLImageElement;
     farmTiles: HTMLImageElement;
     wetFarmTiles: HTMLImageElement;
+    crops: HTMLImageElement;
 
     private loadedImages: number = 0;
-    private totalImages: number = 4;
+    private totalImages: number = 5;
 
     constructor(private onAllImagesLoaded: () => void) {
-        this.grassTiles = this.loadImage('/Grass_Tiles_1.png');
-        this.grassMiddle = this.loadImage('/Grass_1_Middle.png');
-        this.farmTiles = this.loadImage('/FarmLand_Tile.png');
-        this.wetFarmTiles = this.loadImage('/FarmLand_Wet_Tile.png');
+        this.grassTiles = this.loadImage('Grass_Tiles_1.png');
+        this.grassMiddle = this.loadImage('Grass_1_Middle.png');
+        this.farmTiles = this.loadImage('FarmLand_Tile.png');
+        this.wetFarmTiles = this.loadImage('FarmLand_Wet_Tile.png');
+        this.crops = this.loadImage('Crops.png');
     }
 
     private loadImage(src: string): HTMLImageElement {
@@ -23,7 +25,7 @@ export class TileAssets {
         return img;
     }
 
-    private checkAllImagesLoaded() {
+    private checkAllImagesLoaded(): void {
         this.loadedImages++;
         if (this.loadedImages === this.totalImages) {
             this.onAllImagesLoaded();
